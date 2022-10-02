@@ -2,7 +2,7 @@
 # CS110 Project Proposal
 # << Project Title >>
 ## CS 110 Final Project
-### << Semester, Year >>
+### << Fall, 2022 >>
 ### [Assignment Description](https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit?usp=sharing)
 
 << [repl](#) >>
@@ -10,13 +10,13 @@
 << [link to demo presentation slides](#) >>
 
 ### Team: << team name >>
-#### << Team Members >>
+#### << Roisin Smith & Sarah Horvath >>
 
 ***
 
 ## Project Description
 
-<< Give an overview of your project >>
+<< The person inputs their class schedule and where they are living on campus so that the program outputs the quickest routes to their classes, including where they are in the building so that they know which door to go through.  >>
 
 ***    
 
