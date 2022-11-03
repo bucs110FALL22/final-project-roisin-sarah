@@ -39,7 +39,7 @@ class Schedule
     will return exactly where the buildings are (y position)
     how long it will take to get to class 
 
-
+***
 ## Class Interface 2: Map of Campus 
 
 class Map:
@@ -56,7 +56,7 @@ class Map:
    
   methods: 
     change backdrop based on the season 
-    
+***    
 ## Class Interface 3: Person (walking the route to class)
 class Person:
   attributes: 
