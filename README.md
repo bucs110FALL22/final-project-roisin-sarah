@@ -10,13 +10,13 @@
 << [link to demo presentation slides](#) >>
 
 ### Team: << team name >>
-#### << Roisin Smith & Sarah Horvath >>
+#### Roisin Smith & Sarah Horvath 
 
 ***
 
 ## Project Description
 
-<< The person inputs their class schedule and where they are living on campus so that the program outputs the quickest routes to their classes, including where they are in the building so that they know which door to go through.  >>
+The person inputs their class schedule and where they are living on campus so that the program outputs the quickest routes to their classes, including where they are in the building so that they know which door to go through.  
 
 ***    
 
