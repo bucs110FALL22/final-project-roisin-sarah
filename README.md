@@ -40,10 +40,17 @@ The person inputs their class schedule and where they are living on campus so th
          - a short description of the module >>
 * Class Interface Design
     * << A simple drawing that shows the class relationships in your code (see below for an example). This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm. >>
-        * ![class diagram](assets/class_diagram.jpg) 
+        * ![class diagram](assets/class_diagram.jpg)
+        * ![class map](assets/class mapofcampus.jpg)
+  Our designs include a picture of a student walking to class. Right now the student is a blue cicrle. With our graphics, we will include a real student picture.
+Our program also includes a map of campus. Right now, the map of campus is 4 simple circles, but with our graphics, we will have a map of Binghamton's beautiful campus. 
 * Classes
     * << You should have a list of each of your classes with a description. >>
+Class Schedule: Asks the user to input their class and the building each class is in. The program then returns the coordinates of the building of each class and also prints the coordinates.
 
+Class Map: This class produces a map and where each building is on the map.
+Class person: This class is responsible for creating a "person" who moves to where each building is on the map.
+      
 ## Project Structure and File List
 
 The Project is broken down into the following file structure:
