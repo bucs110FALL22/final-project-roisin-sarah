@@ -1,5 +1,8 @@
 import pygame
 #import your controller
+from Schedule import Schedule 
+from Map import Map
+from Person import Person
 
 def main():
     pygame.init()
@@ -11,3 +14,4 @@ def main():
 # https://codefather.tech/blog/if-name-main-python/
 if __name__ == '__main__':
     main()
+
