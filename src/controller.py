@@ -56,41 +56,86 @@ class Controller:
       #pygame.display.set_caption(width, text, font)
       startButton = pygame.Rect(125, 200, 100, 50)
       pygame.draw.rect(self.screen, (0, 255, 0), startButton)
+      def text_type(text, font):
+        textSurface = font.render(text, True, (0,0,0))
+        return textSurface, textSurface.get_rect()
+
+      def button_name(text):
+        largeText = pygame.font.Font('freesansbold.ttf',20)
+        textSurf, textRect = text_type(text, largeText)
+        textRect.center = ((175),(230))
+        screen.blit(textSurf, textRect)
+      def button():
+        button_name('START')
+      button()
       instructionsButton = pygame.Rect(250, 200, 100, 50)
       pygame.draw.rect(self.screen, (0, 255, 0), instructionsButton)
+      def text_type(text, font):
+        textSurface = font.render(text, True, (0,0,0))
+        return textSurface, textSurface.get_rect()
+
+      def button_name(text):
+        largeText = pygame.font.Font('freesansbold.ttf',12)
+        textSurf, textRect = text_type(text, largeText)
+        textRect.center = ((300),(230))
+        screen.blit(textSurf, textRect)
+      def button():
+        button_name('INSTRUCTIONS')
+      button()
       quitButton = pygame.Rect(375, 200, 100, 50)
       pygame.draw.rect(self.screen, (0, 255, 0), quitButton)
+      def text_type(text, font):
+        textSurface = font.render(text, True, (0,0,0))
+        return textSurface, textSurface.get_rect()
+
+      def button_name(text):
+        largeText = pygame.font.Font('freesansbold.ttf',20)
+        textSurf, textRect = text_type(text, largeText)
+        textRect.center = ((425),(230))
+        screen.blit(textSurf, textRect)
+      def button():
+        button_name('QUIT')
+      button()
       pygame.display.update()
+      
+      
+      done = False
+      startPressed = False
+      instructionsPressed = False
+      quitPressed = False
+      mousePos = pygame.mouse.get_pos()
+      while done == False:
+        for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+            done = True
+          if event.type == pygame.MOUSEBUTTONUP:
+           mousePos = pygame.mouse.get_pos()
+          if startButton.collidepoint(mousePos):
+              startPressed = True
+              done = True
+          if instructionsButton.collidepoint(mousePos):
+            instructionsPressed = True
+            done = True
+          if quitButton.collidepoint(mousePos):
+            quitPressed = True
+            done = True
+        
+      if startPressed == True:
+        pygame.draw.rect(self.screen, (255, 0, 0), startButton)
+        pygame.display.flip()
+        self.beginning = False
+      if instructionsPressed == True:
+        pygame.draw.rect(self.screen, (255, 0, 0), instructionsButton)
+        pygame.display.flip()
+        self.beginning = False
+      if quitPressed == True:
+        pygame.draw.rect(self.screen, (255, 0, 0), quitButton)
+        pygame.display.flip()
+        self.beginning = False
 
-       # mousePos = pygame.mouse.get_pos()
-      #  print(mousePos)
-      #gameTitle = self.defButton("Logo.jpg", 700, 400)
-     # print("here i am now")
 
-      #self.screen.blit(gameTitle, (300, 300))
-
-      # self.introImage = ["assets/introLogo.png" ]
-      # pygame.image.load(self.introImage[0])
-      # pygame.transform.scale(self.introImage, 30)
-      #pygame.time.wait(1000)
-      #done = False
-      #pressed = False
-#         mousePos = pygame.mouse.get_pos()
-#         lecturehallButton = pygame.Rect(350, 300, 100, 50)
-#         pygame.draw.rect(self.screen, (0, 0, 0), lecturehallButton)
-#         pygame.display.update()
-#         while done == False:
-#             for event in pygame.event.get():
-#                 if event.type == pygame.QUIT:
-#                     done = True
-#                 if event.type == pygame.MOUSEBUTTONUP:
-#                     mousePos = pygame.mouse.get_pos()
-#                     if lecturehallButton.collidepoint(mousePos):
-#                         pressed = True
-#                         done = True
-#         if pressed == True:
-#             pygame.draw.rect(self.screen, (0, 255, 0), lecturehallButton)
-      self.beginning = False
+           
+      #self.beginning = False
  # def menuloop(self):
     
       #event loop
