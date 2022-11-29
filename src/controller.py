@@ -1,4 +1,8 @@
 import pygame
+import src.start
+import src.instructions
+import sys
+
 
 screen_width=800
 screen_height=500
@@ -17,7 +21,6 @@ class Controller:
     self.background = pygame.transform.scale(self.background, size) 
     self.screen.blit(self.background, (0,0))
 
-    self.beginningMenu()
 
   def mainloop(self):
     #select state loop
@@ -25,6 +28,7 @@ class Controller:
     pygame.display.set_caption('Binghamton University Map Trivia Game!')
     self.screen.blit(self.background, (0,0))
    # pygame.display.update()
+    self.beginningMenu()
 
   ### below are some sample loop states ###
 
@@ -34,26 +38,12 @@ class Controller:
     self.beginning = True 
     self.gameOver = False
     while self.beginning == True:
-      #self.screen.fill((0, 0, 0))
-      print("here i am")
+
+
       self.image = pygame.image.load("assets/introLogo.png")
-      #self.image = pygame.transform.scale(self.image, (screen_width/2,screen_height/2),self.screen) 
-     # self.screen.blit(self.image, self.image.get_rect())
-     # rect = self.move(300, 300)
-      #screen.blit(self.image, rect)
-      
-      #pic = pygame.image.load("image.png")
       screen.blit(pygame.transform.scale(self.image, (500, 500)), (80, -100))
       pygame.display.flip()
-
       
-      pygame.display.update()
-      mousePos = pygame.mouse.get_pos()
-      print(mousePos)
-      #pygame.time.wait(1000)
-      #startButton = 
-      
-      #pygame.display.set_caption(width, text, font)
       startButton = pygame.Rect(125, 200, 100, 50)
       pygame.draw.rect(self.screen, (0, 255, 0), startButton)
       def text_type(text, font):
@@ -70,9 +60,9 @@ class Controller:
       button()
       instructionsButton = pygame.Rect(250, 200, 100, 50)
       pygame.draw.rect(self.screen, (0, 255, 0), instructionsButton)
-      def text_type(text, font):
-        textSurface = font.render(text, True, (0,0,0))
-        return textSurface, textSurface.get_rect()
+      # def text_type(text, font):
+      #   textSurface = font.render(text, True, (0,0,0))
+      #   return textSurface, textSurface.get_rect()
 
       def button_name(text):
         largeText = pygame.font.Font('freesansbold.ttf',12)
@@ -84,9 +74,9 @@ class Controller:
       button()
       quitButton = pygame.Rect(375, 200, 100, 50)
       pygame.draw.rect(self.screen, (0, 255, 0), quitButton)
-      def text_type(text, font):
-        textSurface = font.render(text, True, (0,0,0))
-        return textSurface, textSurface.get_rect()
+      # def text_type(text, font):
+      #   textSurface = font.render(text, True, (0,0,0))
+      #   return textSurface, textSurface.get_rect()
 
       def button_name(text):
         largeText = pygame.font.Font('freesansbold.ttf',20)
@@ -124,15 +114,23 @@ class Controller:
         pygame.draw.rect(self.screen, (255, 0, 0), startButton)
         pygame.display.flip()
         self.beginning = False
+        start = src.start.Start()
+        start.mainloop()
+
       if instructionsPressed == True:
         pygame.draw.rect(self.screen, (255, 0, 0), instructionsButton)
         pygame.display.flip()
         self.beginning = False
+        instructions = src.instructions.Instructions()
+        instructions.mainloop()
+        
       if quitPressed == True:
         pygame.draw.rect(self.screen, (255, 0, 0), quitButton)
         pygame.display.flip()
-        self.beginning = False
-
+        self.screen.fill((0, 0, 0))
+        pygame.display.flip()
+        pygame.quit()
+        quit()
 
            
       #self.beginning = False
