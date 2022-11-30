@@ -20,6 +20,8 @@
 
 
 import pygame
+import src.whitney 
+import src.union
 
 screen_width = 800
 screen_height = 500
@@ -39,12 +41,21 @@ class Start:
         self.background = pygame.image.load(self.background_image[0])
         self.background = pygame.transform.scale(self.background, size)
 
+    def points(self):
+        self.points = 0
+        font = pygame.font.SysFont(None, 45)
+        pointsText = font.render('Points: '+str(self.points), True, (0, 0, 255))
+        self.screen.blit(pointsText, (20, 275))
+        print(self.points)
+      
     def mainloop(self):
         #select state loop
         print("hi")
         pygame.display.set_caption('B')
         self.screen.blit(self.background, (0, 0))
         pygame.display.update()
+        self.points()
+
         '''anderson center button and text'''
         andersonButton = pygame.Rect(310, 300, 100, 50)
         pygame.draw.rect(self.screen, (0, 0, 0), andersonButton)
@@ -85,22 +96,7 @@ class Start:
         self.screen.blit(whitneyText, (75, 205))
         pygame.display.update()
 
-        
-
-        #def text_type(text, font):
-         #   textSurface = font.render(text, True, (255, 255, 255))
-          #  return textSurface, textSurface.get_rect()
-
-        #def building_name(text):
-         #   largeText = pygame.font.Font('freesansbold.ttf', 18)
-          #  textSurf, textRect = text_type(text, largeText)
-           # textRect.center = ((90), (220))
-            #screen.blit(textSurf, textRect)
-
-        #def building():
-          #  building_name('WH')
-
-        #building()
+      
        # pygame.display.update()
 
         # mousePosition = pygame.mouse.get_pos()
@@ -160,12 +156,15 @@ class Start:
           if unionpressed == True:
               pygame.draw.rect(self.screen, (0, 255, 0), unionButton)
               done = False
+              union = src.union.Union()
+              union.mainloop()
           if librarypressed == True:
               pygame.draw.rect(self.screen, (0,255,0), libraryButton)
           if whitneypressed == True:
               pygame.draw.rect(self.screen, (0, 255, 0), whitneyButton)
               done = False
-  
+              whitney = src.whitney.Whitney()
+              whitney.mainloop()
           pygame.display.update()
         pygame.time.wait(100000)
 
