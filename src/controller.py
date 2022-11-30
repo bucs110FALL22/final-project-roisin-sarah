@@ -1,7 +1,6 @@
 import pygame
 import src.start
 import src.instructions
-import sys
 
 screen_width = 800
 screen_height = 500

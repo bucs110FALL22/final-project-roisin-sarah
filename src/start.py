@@ -41,12 +41,10 @@ class Start:
         self.background = pygame.image.load(self.background_image[0])
         self.background = pygame.transform.scale(self.background, size)
 
-    def points(self):
-        self.points = 0
-        font = pygame.font.SysFont(None, 45)
-        pointsText = font.render('Points: '+str(self.points), True, (0, 0, 255))
-        self.screen.blit(pointsText, (20, 275))
-        print(self.points)
+
+        #print(self.points)
+   # def whitneyLoop(self):
+    #  print("now in whitney")
       
     def mainloop(self):
         #select state loop
@@ -54,8 +52,8 @@ class Start:
         pygame.display.set_caption('B')
         self.screen.blit(self.background, (0, 0))
         pygame.display.update()
-        self.points()
-
+        #self.points(2)
+      
         '''anderson center button and text'''
         andersonButton = pygame.Rect(310, 300, 100, 50)
         pygame.draw.rect(self.screen, (0, 0, 0), andersonButton)
@@ -96,7 +94,9 @@ class Start:
         self.screen.blit(whitneyText, (75, 205))
         pygame.display.update()
 
-      
+        self.points(0)
+        pygame.display.update()
+
        # pygame.display.update()
 
         # mousePosition = pygame.mouse.get_pos()
@@ -163,8 +163,12 @@ class Start:
           if whitneypressed == True:
               pygame.draw.rect(self.screen, (0, 255, 0), whitneyButton)
               done = False
+              print(self.points)
               whitney = src.whitney.Whitney()
               whitney.mainloop()
+              #whitneyLoop(self)
+
+          
           pygame.display.update()
         pygame.time.wait(100000)
 
@@ -192,3 +196,14 @@ class Start:
 #update data
 
 #redraw
+
+
+
+
+    def points(self,x):
+        self.x = 0 
+        self.points = 0 +self.x
+        font = pygame.font.SysFont(None, 45)
+        pointsText = font.render('Points: '+str(self.points), True, (0, 0, 255))
+        self.screen.blit(pointsText, (20, 275))
+      
