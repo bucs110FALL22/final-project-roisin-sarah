@@ -1,5 +1,6 @@
 import pygame
 import src.start
+import json
 
 
 class Whitney:
@@ -16,7 +17,7 @@ class Whitney:
         self.background1 = pygame.transform.scale(self.background1, size)
 
     # self.screen.blit(self.background1, (0,0))
-
+ 
     def mainloop(self):
         #     print("hey queen")
         start = src.start.Start()
@@ -45,4 +46,5 @@ class Whitney:
                         #start.points(1)
                         self.whitneyPoints = self.whitneyPoints + 1
 
-        start.mainloop()
+        return self.whitneyPoints 
+       # start.mainloop()

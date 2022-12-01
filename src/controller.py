@@ -1,6 +1,7 @@
 import pygame
 import src.start
 import src.instructions
+import json
 
 screen_width = 800
 screen_height = 500
@@ -25,39 +26,47 @@ class Controller:
         '''display background image and caption'''
         pygame.display.set_caption('Binghamton University Map Trivia Game!')
         self.screen.blit(self.background, (0, 0))
-        # pygame.display.update()
         self.beginningMenu()
-
-    #  points()
-
-    ### below are some sample loop states ###
-
+      
     def beginningMenu(self):
         print("hi")
         self.beginning = True
         self.gameOver = False
+        buttonGroup = {}
         '''load and disply intro logo picture'''
         self.image = pygame.image.load("assets/introLogo.png")
         screen.blit(pygame.transform.scale(self.image, (500, 500)), (80, -100))
-        pygame.display.flip()
-        '''create and label start button'''
-        startButton = pygame.Rect(125, 200, 100, 50)
-        pygame.draw.rect(self.screen, (0, 255, 0), startButton)
-        font = pygame.font.SysFont(None, 30)
-        startText = font.render("START", True, (0, 0, 0))
-        self.screen.blit(startText, (140, 220))
-        '''create and label instructions button'''
-        instructionsButton = pygame.Rect(250, 200, 100, 50)
-        pygame.draw.rect(self.screen, (0, 255, 0), instructionsButton)
-        font = pygame.font.SysFont(None, 20)
-        instructionsText = font.render("INSTRUCTIONS", True, (0, 0, 0))
-        self.screen.blit(instructionsText, (250, 220))
-        '''create and label quit button'''
-        quitButton = pygame.Rect(375, 200, 100, 50)
-        pygame.draw.rect(self.screen, (0, 255, 0), quitButton)
-        font = pygame.font.SysFont(None, 30)
-        instructionsText = font.render("QUIT", True, (0, 0, 0))
-        self.screen.blit(instructionsText, (395, 220))
+        '''load json file '''
+      
+        with open('etc/button_data.json','r') as fptr:
+          data = json.load(fptr)
+        '''create the start, instructions, and quit buttons'''
+        for button in data ['button']:
+          print(button)
+          buttonGroup[button['buttonName']] = pygame.Rect(button['x'],button['y'], button['w'],button['h'])
+          pygame.draw.rect(self.screen, button['buttonColor'], buttonGroup[button['buttonName']])
+          font = pygame.font.SysFont(None,button['fontSize'])
+          button['buttonVariable'] = font.render(button['buttonLabel'], True, button['buttonTextColor'])
+          self.screen.blit(button['buttonVariable'], (button['buttonTextX'], button['buttonTextY']))
+
+        # '''create and label start button'''
+        # startButton = pygame.Rect(125, 200, 100, 50)
+        # pygame.draw.rect(self.screen, (0, 255, 0), startButton)
+        # font = pygame.font.SysFont(None, 30)
+        # startText = font.render("START", True, (0, 0, 0))
+        # self.screen.blit(startText, (140, 220))
+        # '''create and label instructions button'''
+        # instructionsButton = pygame.Rect(250, 200, 100, 50)
+        # pygame.draw.rect(self.screen, (0, 255, 0), instructionsButton)
+        # font = pygame.font.SysFont(None, 20)
+        # instructionsText = font.render("INSTRUCTIONS", True, (0, 0, 0))
+        # self.screen.blit(instructionsText, (250, 220))
+        # '''create and label quit button'''
+        # quitButton = pygame.Rect(375, 200, 100, 50)
+        # pygame.draw.rect(self.screen, (0, 255, 0), quitButton)
+        # font = pygame.font.SysFont(None, 30)
+        # instructionsText = font.render("QUIT", True, (0, 0, 0))
+        # self.screen.blit(instructionsText, (395, 220))
         '''update the screen'''
         pygame.display.update()
   
@@ -74,32 +83,32 @@ class Controller:
                         done = True
                     if event.type == pygame.MOUSEBUTTONUP:
                         mousePos = pygame.mouse.get_pos()
-                    if startButton.collidepoint(mousePos):
+                    if buttonGroup["startButton"].collidepoint(mousePos):
                         startPressed = True
                         done = True
-                    if instructionsButton.collidepoint(mousePos):
+                    if buttonGroup["instructionButton"].collidepoint(mousePos):
                         instructionsPressed = True
                         done = True
-                    if quitButton.collidepoint(mousePos):
+                    if buttonGroup["quitButton"].collidepoint(mousePos):
                         quitPressed = True
                         done = True
 
             if startPressed == True:
-                pygame.draw.rect(self.screen, (255, 0, 0), startButton)
+                pygame.draw.rect(self.screen, (255, 0, 0), buttonGroup["startButton"])
                 pygame.display.flip()
                 self.beginning = False
                 start = src.start.Start()
                 start.mainloop()
 
             if instructionsPressed == True:
-                pygame.draw.rect(self.screen, (255, 0, 0), instructionsButton)
+                pygame.draw.rect(self.screen, (255, 0, 0), buttonGroup["instructionButton"])
                 pygame.display.flip()
                 self.beginning = False
                 instructions = src.instructions.Instructions()
                 instructions.mainloop()
 
             if quitPressed == True:
-                pygame.draw.rect(self.screen, (255, 0, 0), quitButton)
+                pygame.draw.rect(self.screen, (255, 0, 0), buttonGroup["quitButton"])
                 pygame.display.flip()
                 self.screen.fill((0, 0, 0))
                 pygame.display.flip()

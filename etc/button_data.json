@@ -1,0 +1,70 @@
+{
+    "button": [
+        {
+            "buttonName": "startButton",
+            "x": 125,
+            "y": 200,
+            "w": 100,
+            "h": 50,
+            "buttonColor": [
+                0,
+                255,
+                0
+            ],
+            "fontSize": 30,
+            "buttonVariable": "startText",
+            "buttonLabel": "START",
+            "buttonTextColor": [
+                0,
+                0,
+                0
+            ],
+            "buttonTextX": 140,
+            "buttonTextY": 220
+        },
+        {
+            "buttonName": "instructionButton",
+            "x": 250,
+            "y": 200,
+            "w": 100,
+            "h": 50,
+            "buttonColor": [
+                0,
+                255,
+                0
+            ],
+            "fontSize": 20,
+            "buttonVariable": "instructionsText",
+            "buttonLabel": "INSTRUCTIONS",
+            "buttonTextColor": [
+                0,
+                0,
+                0
+            ],
+            "buttonTextX": 250,
+            "buttonTextY": 220
+        },
+        {
+            "buttonName": "quitButton",
+            "x": 375,
+            "y": 200,
+            "w": 100,
+            "h": 50,
+            "buttonColor": [
+                0,
+                255,
+                0
+            ],
+            "fontSize": 30,
+            "buttonVariable": "quitText",
+            "buttonLabel": "QUIT",
+            "buttonTextColor": [
+                0,
+                0,
+                0
+            ],
+            "buttonTextX": 395,
+            "buttonTextY": 220
+        }
+    ]
+}
