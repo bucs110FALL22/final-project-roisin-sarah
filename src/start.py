@@ -22,87 +22,39 @@ class Start:
         self.background = pygame.transform.scale(self.background, size)
         self.points = 0
 
-        #print(self.points)
-# def whitneyLoop(self):
-#  print("now in whitney")
-
     def scoreboard(self):
-        # self.x = 0
-        #self.points = 0
+
         font = pygame.font.SysFont(None, 45)
-        pointsText = font.render('Points: ' + str(self.points), True,
-                                 (0, 0, 255))
+        pointsText = font.render('Points: ' + str(self.points), True, (0, 0, 255))
         self.screen.blit(pointsText, (20, 275))
-        #print(self.points)
 
     def mainloop(self):
         while True:
             self.gameloop()
 
     def gameloop(self):
-        #select state loop
-        #print("hi")
-        pygame.display.set_caption('B')
+
         self.screen.blit(self.background, (0, 0))
         self.scoreboard()
         pygame.display.update()
-        #self.points(2)
         buttonGroup = {}
 
         with open('etc/building_data.json','r') as fptr:
           data = json.load(fptr)
-        '''create the start, instructions, and quit buttons'''
+        '''create anderson, sci library, union, library, and whitney hall buttons'''
         for button in data ['button']:
-          print(button)
           buttonGroup[button['buttonName']] = pygame.Rect(button['x'],button['y'], button['w'],button['h'])
           pygame.draw.rect(self.screen, button['buttonColor'], buttonGroup[button['buttonName']])
           font = pygame.font.SysFont(None,button['fontSize'])
           button['buttonVariable'] = font.render(button['buttonLabel'], True, button['buttonTextColor'])
           self.screen.blit(button['buttonVariable'], (button['buttonTextX'], button['buttonTextY']))
 
-
-      
-        # '''anderson center button and text'''
-        # andersonButton = pygame.Rect(310, 300, 100, 50)
-        # pygame.draw.rect(self.screen, (0, 0, 0), andersonButton)
-        # pygame.display.update()
-        # font = pygame.font.SysFont(None, 25)
-        # andersonCenterText = font.render('AC', True, (255, 255, 255))
-        # self.screen.blit(andersonCenterText, (360, 325))
-        '''lecture hall button and text'''
-        lecturehallButton = pygame.draw.circle(self.screen, (0, 0, 0),
-                                               (500, 100), 50)
-        #WHERE DO WE DRAW THE LECTURE HALL
+        '''lecture hall button and text - different because it's a circle'''
+        lecturehallButton = pygame.draw.circle(self.screen, (0, 0, 0), (500, 100), 50)
         pygame.display.update()
         lectureHallText = font.render('LH', True, (255, 255, 255))
         self.screen.blit(lectureHallText, (500, 125))
-        # '''science library button and text'''
-        # scilibraryButton = pygame.Rect(485, 290, 50, 50)
-        # pygame.draw.rect(self.screen, (0, 0, 0), scilibraryButton)
-        # scienceLibraryText = font.render('SL', True, (255, 255, 255))
-        # self.screen.blit(scienceLibraryText, (510, 315))
-        # pygame.display.update()
-        # '''union button and text'''
-        # unionButton = pygame.Rect(210, 100, 60, 100)
-        # pygame.draw.rect(self.screen, (0, 0, 0), unionButton)
-        # pygame.display.update()
-        # unionText = font.render('UU', True, (255, 255, 255))
-        # self.screen.blit(unionText, (240, 150))
-        # '''library button and text'''
-        # libraryButton = pygame.Rect(350, 90, 60, 90)
-        # pygame.draw.rect(self.screen, (0, 0, 0), libraryButton)
-        # pygame.display.update()
-        # unionText = font.render('LIB', True, (255, 255, 255))
-        # self.screen.blit(unionText, (380, 130))
-        # '''whitney button and text'''
 
-        # whitneyButton = pygame.Rect(70, 200, 40, 40)
-        # pygame.draw.rect(self.screen, (0, 0, 0), whitneyButton)
-        # whitneyText = font.render('WH', True, (255, 255, 255))
-        # self.screen.blit(whitneyText, (75, 205))
-        # pygame.display.update()
-
-        # self.points(0)
         pygame.display.update()
 
         selected = False
