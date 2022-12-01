@@ -1,24 +1,3 @@
-# import pygame 
-
-
-# class Start: 
-    
-#   def __init__(self):
-#   #setup pygame data
-#     pygame.init()
-#     self.screen = pygame.display.set_mode()
-#     size = pygame.display.get_window_size() 
-#     self.background_image = ["assets/Map.jpeg" ]
-#     self.background = pygame.image.load(self.background_image[0])
-#     self.background = pygame.transform.scale(self.background, size) 
-#     self.screen.blit(self.background, (0,0))
-
-#   def mainloop(self):
-#     print("hey queen")
-#     self.screen.blit(self.background, (0,0))
-#     pygame.display.update()
-
-
 import pygame
 import src.whitney 
 import src.union
@@ -45,15 +24,23 @@ class Start:
         #print(self.points)
    # def whitneyLoop(self):
     #  print("now in whitney")
-      
+    def points(self):
+       # self.x = 0 
+        self.points = 0 
+        font = pygame.font.SysFont(None, 45)
+        pointsText = font.render('Points: '+str(self.points), True, (0, 0, 255))
+        self.screen.blit(pointsText, (20, 275))
+        #print(self.points)
+        
     def mainloop(self):
         #select state loop
-        print("hi")
+        #print("hi")
         pygame.display.set_caption('B')
         self.screen.blit(self.background, (0, 0))
         pygame.display.update()
         #self.points(2)
-      
+
+        self.points()
         '''anderson center button and text'''
         andersonButton = pygame.Rect(310, 300, 100, 50)
         pygame.draw.rect(self.screen, (0, 0, 0), andersonButton)
@@ -94,17 +81,9 @@ class Start:
         self.screen.blit(whitneyText, (75, 205))
         pygame.display.update()
 
-        self.points(0)
+        # self.points(0)
         pygame.display.update()
 
-       # pygame.display.update()
-
-        # mousePosition = pygame.mouse.get_pos()
-        #print(mousePosition)
-
-        #lecturehallButton = pygame.Rect(350, 300, 100, 50)
-        #pygame.draw.rect(self.screen, (0, 0, 0), lecturehallButton)
-        #words = 20000
         for i in range(200000):
           done = False
           #pressed = False
@@ -163,14 +142,15 @@ class Start:
           if whitneypressed == True:
               pygame.draw.rect(self.screen, (0, 255, 0), whitneyButton)
               done = False
-              print(self.points)
+              #print(self.points)
               whitney = src.whitney.Whitney()
               whitney.mainloop()
               #whitneyLoop(self)
+              print(whitney.whitneyPoints)
 
-          
+         # print(whitneyPoints)
           pygame.display.update()
-        pygame.time.wait(100000)
+#        pygame.time.wait(100000)
 
     ### below are some sample loop states ###
 
@@ -200,10 +180,3 @@ class Start:
 
 
 
-    def points(self,x):
-        self.x = 0 
-        self.points = 0 +self.x
-        font = pygame.font.SysFont(None, 45)
-        pointsText = font.render('Points: '+str(self.points), True, (0, 0, 255))
-        self.screen.blit(pointsText, (20, 275))
-      
