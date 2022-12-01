@@ -33,6 +33,7 @@ class Controller:
         self.beginning = True
         self.gameOver = False
         buttonGroup = {}
+        buttonPressed = {}
         '''load and disply intro logo picture'''
         self.image = pygame.image.load("assets/introLogo.png")
         screen.blit(pygame.transform.scale(self.image, (500, 500)), (80, -100))

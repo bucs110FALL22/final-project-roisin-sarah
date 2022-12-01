@@ -20,7 +20,7 @@ class Whitney:
  
     def mainloop(self):
         #     print("hey queen")
-        start = src.start.Start()
+       # start = src.start.Start()
         self.whitneyPoints = 0
         answerQuestion = True
         while answerQuestion == True:
