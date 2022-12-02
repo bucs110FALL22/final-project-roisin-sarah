@@ -29,7 +29,6 @@ class Controller:
         self.beginningMenu()
       
     def beginningMenu(self):
-        print("hi")
         self.beginning = True
         self.gameOver = False
         buttonGroup = {}
@@ -43,7 +42,6 @@ class Controller:
           data = json.load(fptr)
         '''create the start, instructions, and quit buttons'''
         for button in data ['button']:
-          print(button)
           buttonGroup[button['buttonName']] = pygame.Rect(button['x'],button['y'], button['w'],button['h'])
           pygame.draw.rect(self.screen, button['buttonColor'], buttonGroup[button['buttonName']])
           font = pygame.font.SysFont(None,button['fontSize'])

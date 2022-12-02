@@ -1,22 +1,22 @@
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 # CS110 Project Proposal
-# << Project Title >>
+# Binghamton Map Trivia Game
 ## CS 110 Final Project
 ### << Fall, 2022 >>
 ### [Assignment Description](https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit?usp=sharing)
 
-<< [repl](#) >>
+#11
 
-<< [link to demo presentation slides](#) >>
+https://docs.google.com/presentation/d/1JwHyYumrYvmyW5Zv2PsUML5qCxsKeuVND5h9ZmPW5cU/edit#slide=id.p
 
-### Team: << team name >>
+### Team: Sarah and Roisin
 #### Roisin Smith & Sarah Horvath 
 
 ***
 
 ## Project Description
 
-The person inputs their class schedule and where they are living on campus so that the program outputs the quickest routes to their classes, including where they are in the building so that they know which door to go through.  
+Our project is a trivia game that displays a map of Binghamton University with some of the significant buildings. When the user clicks on one of the buidings, they are told what the building is asked a question. If the user inputs the correct answer, they get a point. 
 
 ***    
 
@@ -38,6 +38,9 @@ The person inputs their class schedule and where they are living on campus so th
          For each additional module you should include
          - url for the module documentation
          - a short description of the module >>
+Pygame:
+ - https://www.pygame.org/docs/
+ - 
 * Class Interface Design
     * << A simple drawing that shows the class relationships in your code (see below for an example). This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm. >>
         * ![class diagram](assets/class_diagram.jpg)
@@ -46,10 +49,15 @@ The person inputs their class schedule and where they are living on campus so th
 Our program also includes a map of campus. Right now, the map of campus is 4 simple circles, but with our graphics, we will have a map of Binghamton's beautiful campus. 
 * Classes
     * << You should have a list of each of your classes with a description. >>
-Class Schedule: Asks the user to input their class and the building each class is in. The program then returns the coordinates of the building of each class and also prints the coordinates.
-
-Class Map: This class produces a map and where each building is on the map.
-Class person: This class is responsible for creating a "person" who moves to where each building is on the map.
+Class Anderson:
+Class Controller:
+Class Instructions:
+Class Lecturehall:
+Class Library:
+Class Quit: 
+Class Start:
+Class Union:
+Class Whitney:
       
 ## Project Structure and File List
 
