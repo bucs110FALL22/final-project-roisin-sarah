@@ -21,7 +21,7 @@ class Start:
         self.background = pygame.image.load(self.background_image[0])
         self.background = pygame.transform.scale(self.background, (screenWidth, screenHeight))
         self.points = 0
-
+    '''creates scoreboard and displays points to the screen. Checks if the score is above six'''
     def scoreboard(self):
 
         font = pygame.font.SysFont(None, 45)
@@ -29,14 +29,14 @@ class Start:
                                  (0, 0, 255))
         self.screen.blit(pointsText, (20, 325))
         if self.points >= 6: 
-          winText = font.render('You scored all 7 points!', True, (0, 0, 255))
+          winText = font.render('You scored all 6 points!', True, (0, 0, 255))
           self.screen.blit(winText, (20, 350))
           highscore = open('etc/highscore.txt', "r")
-
+    '''runs the game loop'''
     def mainloop(self):
         while True:
             self.gameloop()
-
+    '''creates all the buttons of the buildings and checks to see if they have been pressed'''
     def gameloop(self):
 
         self.screen.blit(self.background, (0, 0))

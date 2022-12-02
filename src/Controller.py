@@ -6,12 +6,12 @@ import json
 class Controller:
 
     def __init__(self):
-        #setup pygame data
+        pygame.init()
+        '''set up screen'''
         screenWidth = 800
         screenHeight = 500
-        pygame.init()
-        '''import background image '''
         self.screen = pygame.display.set_mode([screenWidth, screenHeight])
+        '''import background image and display'''
         self.background_image = ["assets/Map.jpeg"]
         self.background = pygame.image.load(self.background_image[0])
         self.background = pygame.transform.scale(self.background, (screenWidth, screenHeight))
@@ -32,7 +32,6 @@ class Controller:
         self.image = pygame.image.load("assets/introLogo.png")
         self.screen.blit(pygame.transform.scale(self.image, (500, 500)), (140, -100))
         '''load json file '''
-      
         with open('etc/button_data.json','r') as fptr:
           data = json.load(fptr)
         '''create the start, instructions, and quit buttons'''
@@ -45,7 +44,7 @@ class Controller:
 
         '''update the screen'''
         pygame.display.update()
-  
+        '''create loop to know if button was clicked'''
         while self.beginning == True:
             
             done = False
@@ -92,6 +91,7 @@ class Controller:
                 quit()
 
             #self.beginning = False
+    '''creates a points tally and displays to screen'''
     def points(self):
         points = 0
         font = pygame.font.SysFont(None, 30)

@@ -7,7 +7,7 @@ class Instructions:
   #setup pygame data
     pygame.init()
     self.screen = pygame.display.set_mode()
-    
+    '''displays the instructions for the game'''  
   def mainloop(self):
     controllor = src.Controller.Controller()
 

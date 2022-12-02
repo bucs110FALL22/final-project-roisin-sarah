@@ -3,8 +3,8 @@ import pygame
 class Anderson:
 
     def __init__(self, tag=""):
+        '''sets up the screen, and displays the image of the question with choices'''
         pygame.init()
-        '''set up the screen'''
         screenWidth = 800
         screenHeight = 500
         self.screen = pygame.display.set_mode([screenWidth, screenHeight])
@@ -13,6 +13,7 @@ class Anderson:
         self.background1 = pygame.transform.scale(self.background1, (screenWidth, screenHeight))
 
     def mainloop(self):
+        '''Checks what key has been pressed. Adds a point for a correct answer to the question and subtracts a point for a wrong answer'''
         self.andersonPoints = 0
         answerQuestion = True
         while answerQuestion == True:
