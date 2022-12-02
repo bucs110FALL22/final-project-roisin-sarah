@@ -2,7 +2,7 @@
     "button": [
         {
             "buttonName": "andersonButton",
-            "x": 310,
+            "x": 360,
             "y": 300,
             "w": 100,
             "h": 50,
@@ -19,14 +19,14 @@
                 255,
                 255
             ],
-            "buttonTextX": 360,
-            "buttonTextY": 325 
+            "buttonTextX": 400,
+            "buttonTextY": 315 
 
         },
 
         {
             "buttonName": "scilibraryButton",
-            "x": 485,
+            "x": 530,
             "y": 290,
             "w": 50,
             "h": 50,
@@ -35,7 +35,7 @@
                 0,
                 0
             ],
-            "fontSize": 20,
+            "fontSize": 25,
             "buttonVariable": "scilibraryText",
             "buttonLabel": "SL",
             "buttonTextColor": [
@@ -43,13 +43,13 @@
                 255,
                 255
             ],
-            "buttonTextX": 510,
-            "buttonTextY": 315
+            "buttonTextX": 545,
+            "buttonTextY": 305
         },
         {
             "buttonName": "unionButton",
-            "x": 210,
-            "y": 100,
+            "x": 270,
+            "y": 60,
             "w": 60,
             "h": 100,
             "buttonColor": [
@@ -65,13 +65,13 @@
                 255,
                 255
             ],
-            "buttonTextX": 240,
-            "buttonTextY": 150
+            "buttonTextX": 290,
+            "buttonTextY": 110
         },
         {
             "buttonName": "libraryButton",
-            "x": 350,
-            "y": 90,
+            "x": 410,
+            "y": 80,
             "w": 60,
             "h": 90,
             "buttonColor": [
@@ -87,12 +87,12 @@
                 255,
                 255
             ],
-            "buttonTextX": 380,
-            "buttonTextY": 130
+            "buttonTextX": 430,
+            "buttonTextY": 120
         },
         {
             "buttonName": "whitneyButton",
-            "x": 70,
+            "x": 120,
             "y": 200,
             "w": 40,
             "h": 40,
@@ -109,8 +109,8 @@
                 255,
                 255
             ],
-            "buttonTextX": 75,
-            "buttonTextY": 205
+            "buttonTextX": 128,
+            "buttonTextY": 212
         }
     ]
 }

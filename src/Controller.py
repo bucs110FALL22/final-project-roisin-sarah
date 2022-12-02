@@ -30,7 +30,7 @@ class Controller:
         buttonGroup = {}
         '''load and disply intro logo picture'''
         self.image = pygame.image.load("assets/introLogo.png")
-        self.screen.blit(pygame.transform.scale(self.image, (500, 500)), (80, -100))
+        self.screen.blit(pygame.transform.scale(self.image, (500, 500)), (140, -100))
         '''load json file '''
       
         with open('etc/button_data.json','r') as fptr:
@@ -96,70 +96,6 @@ class Controller:
         points = 0
         font = pygame.font.SysFont(None, 30)
         pointsText = font.render('Points: ' + points, True, (255, 0, 0))
-        self.screen.blit(pointsText, (100, 200))
+        self.screen.blit(pointsText, (100, 400))
         print(points)
 
-# def menuloop(self):
-
-#event loop
-
-#update data
-
-#redraw
-
-# def gameloop(self):
-#event loop
-
-#update data
-
-#redraw
-
-# def gameoverloop(self):
-#event loop
-
-#update data
-
-#redraw
-
-
-# class Controller:
-
-#     def __init__(self):
-#         #setup pygame data
-#         pygame.init()
-#         pygame.font.init()
-#         '''import background image '''
-#         self.screen = pygame.display.set_mode()
-#         size = pygame.display.get_window_size()
-#         self.background_image = ["assets/Map.jpeg"]
-#         self.background = pygame.image.load(self.background_image[0])
-#         self.background = pygame.transform.scale(self.background, size)
-
-#     def mainloop(self):
-#         #select state loop
-#         print("hi")
-#         pygame.display.set_caption('B')
-#         self.screen.blit(self.background, (0, 0))
-#         pygame.display.update()
-
-#         # mousePosition = pygame.mouse.get_pos()
-#         #print(mousePosition)
-#         done = False
-#         pressed = False
-#         mousePos = pygame.mouse.get_pos()
-#         lecturehallButton = pygame.Rect(350, 300, 100, 50)
-#         pygame.draw.rect(self.screen, (0, 0, 0), lecturehallButton)
-#         pygame.display.update()
-#         while done == False:
-#             for event in pygame.event.get():
-#                 if event.type == pygame.QUIT:
-#                     done = True
-#                 if event.type == pygame.MOUSEBUTTONUP:
-#                     mousePos = pygame.mouse.get_pos()
-#                     if lecturehallButton.collidepoint(mousePos):
-#                         pressed = True
-#                         done = True
-#         if pressed == True:
-#             pygame.draw.rect(self.screen, (0, 255, 0), lecturehallButton)
-#             self.menu.add.label("Science Library", max_char=-1, font_size=14)
-#         pygame.display.update()

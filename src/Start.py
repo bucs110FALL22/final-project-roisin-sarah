@@ -27,7 +27,11 @@ class Start:
         font = pygame.font.SysFont(None, 45)
         pointsText = font.render('Points: ' + str(self.points), True,
                                  (0, 0, 255))
-        self.screen.blit(pointsText, (20, 275))
+        self.screen.blit(pointsText, (20, 325))
+        if self.points >= 6: 
+          winText = font.render('You scored all 7 points!', True, (0, 0, 255))
+          self.screen.blit(winText, (20, 350))
+          highscore = open('etc/highscore.txt', "r")
 
     def mainloop(self):
         while True:
@@ -54,10 +58,10 @@ class Start:
             self.screen.blit(button['buttonVariable'],
                              (button['buttonTextX'], button['buttonTextY']))
         '''lecture hall button and text - different because it's a circle'''
-        lecturehallButton = pygame.draw.circle(self.screen, (0, 0, 0), (500, 100), 50)
+        lecturehallButton = pygame.draw.circle(self.screen, (0, 0, 0), (580, 130), 50)
         pygame.display.update()
         lectureHallText = font.render('LH', True, (255, 255, 255))
-        self.screen.blit(lectureHallText, (500, 125))
+        self.screen.blit(lectureHallText, (570, 130))
 
         pygame.display.update()
 
@@ -139,30 +143,3 @@ class Start:
                 selected = True
 
             pygame.display.update()
-
-
-#        pygame.time.wait(100000)
-
-### below are some sample loop states ###
-
-# def menuloop(self):
-
-#event loop
-
-#update data
-
-#redraw
-
-# def gameloop(self):
-#event loop
-
-#update data
-
-#redraw
-
-# def gameoverloop(self):
-#event loop
-
-#update data
-
-#redraw

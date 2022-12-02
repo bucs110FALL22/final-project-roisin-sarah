@@ -35,8 +35,11 @@ Our project is a trivia game that displays a map of Binghamton University with s
   - Opening Menu:
     - ![intro menu](assets/introMenu.png)
   - When the quit button is pressed:
+    - ![intro menu](assets/quit.png)
   - When the instructions button is pressed:
+    - ![intro menu](assets/instructions.png)
   - When the start button is pressed:
+    - ![intro menu](assets/start.png)
     - When Anderson Center is pressed:
       - ![anderson](assets/anderson.png)
     - When Lecture Hall is pressed:
@@ -67,14 +70,10 @@ Our project is a trivia game that displays a map of Binghamton University with s
      
 
 * Class Interface Design
-    * << A simple drawing that shows the class relationships in your code (see below for an example). This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm. >>
-        * ![class diagram](assets/class_diagram.jpg)
-        * ![class map](assets/class mapofcampus.jpg)
-  Our designs include a picture of a student walking to class. Right now the student is a blue cicrle. With our graphics, we will include a real student picture.
-Our program also includes a map of campus. Right now, the map of campus is 4 simple circles, but with our graphics, we will have a map of Binghamton's beautiful campus.
+         ![class diagram](assets/classdiagram.jpg)
 
 * Classes
-    * 
+  
   - **Class Anderson**
     - When the Anderson Center building is clicked on the map, this class is responsible for displaying the question about the Anderson Center. This class allows users to type their answer to the question, and then adds or subtracts a point depending on if the user got the question correct. Once the user types in their answer, the class returns the user to the main map to see if they got the answer right by looking at their point total!
   - **Class Controller:**
@@ -113,16 +112,19 @@ The Project is broken down into the following file structure:
     * Whitney.py
 * assets
     * anderson.png
+    * classdiagram.jpg
+    * initialConcept.jpg
+    * instructions.png
     * introLogo.png
+    * introMenu.png
     * lecturehall.png
     * library.png
     * Map.jpeg
+    * quit.png
     * scilibrary.png
     * union.png
     * whitney.png
-      
-## add the asset for the image im about to add
-* etc
+      * etc
     * building_data.json
     * button_data.json
     * milestone2.md
@@ -139,8 +141,8 @@ The Project is broken down into the following file structure:
 
 ## ATP
 
-| Step                 |Procedure                             |Expected Results                   |
-|----------------------|:--------------------:|----------------------------------:|
+| Step             |Procedure                             |Expected Results        |   Comments                 | 
+|----------------------|:--------------------:|:----------------------------------:|:-------------------------|
 |  1                   | Open terminal, navigate to folder, and type, “python3 main.py”|The program begins and displays the trivia games opening page on the window  |    
 |  2                   | Click "Quit" button  |Window appears black and quits  | 
 |  3                   | Open terminal, navigate to folder, and type, “python3 main.py”|The program begins and displays the trivia game opening page  | 
