@@ -1,17 +1,11 @@
 import pygame
 import json
-import src.whitney
-import src.union
-import src.lecturehall
-import src.anderson 
-import src.scilibrary
-import src.library
-
-
-screen_width = 800
-screen_height = 500
-screen = pygame.display.set_mode([screen_width, screen_height])
-
+import src.Whitney
+import src.Union
+import src.Lecturehall
+import src.Anderson 
+import src.Scilibrary
+import src.Library
 
 class Start:
 
@@ -20,7 +14,7 @@ class Start:
         pygame.init()
         pygame.font.init()
         '''import background image '''
-        self.screen = pygame.display.set_mode()
+        self.SCREEN = pygame.display.set_mode()
         size = pygame.display.get_window_size()
         self.background_image = ["assets/Map.jpeg"]
         self.background = pygame.image.load(self.background_image[0])
@@ -32,7 +26,7 @@ class Start:
         font = pygame.font.SysFont(None, 45)
         pointsText = font.render('Points: ' + str(self.points), True,
                                  (0, 0, 255))
-        self.screen.blit(pointsText, (20, 275))
+        self.SCREEN.blit(pointsText, (20, 275))
 
     def mainloop(self):
         while True:
@@ -40,7 +34,7 @@ class Start:
 
     def gameloop(self):
 
-        self.screen.blit(self.background, (0, 0))
+        self.SCREEN.blit(self.background, (0, 0))
         self.scoreboard()
         pygame.display.update()
         buttonGroup = {}
@@ -51,19 +45,18 @@ class Start:
         for button in data['button']:
             buttonGroup[button['buttonName']] = pygame.Rect(
                 button['x'], button['y'], button['w'], button['h'])
-            pygame.draw.rect(self.screen, button['buttonColor'],
+            pygame.draw.rect(self.SCREEN, button['buttonColor'],
                              buttonGroup[button['buttonName']])
             font = pygame.font.SysFont(None, button['fontSize'])
             button['buttonVariable'] = font.render(button['buttonLabel'], True,
                                                    button['buttonTextColor'])
-            self.screen.blit(button['buttonVariable'],
+            self.SCREEN.blit(button['buttonVariable'],
                              (button['buttonTextX'], button['buttonTextY']))
         '''lecture hall button and text - different because it's a circle'''
-        lecturehallButton = pygame.draw.circle(self.screen, (0, 0, 0),
-                                               (500, 100), 50)
+        lecturehallButton = pygame.draw.circle(self.SCREEN, (0, 0, 0), (500, 100), 50)
         pygame.display.update()
         lectureHallText = font.render('LH', True, (255, 255, 255))
-        self.screen.blit(lectureHallText, (500, 125))
+        self.SCREEN.blit(lectureHallText, (500, 125))
 
         pygame.display.update()
 
@@ -102,44 +95,44 @@ class Start:
                         whitneypressed = True
                         done = True
             if andersonpressed == True:
-                pygame.draw.rect(self.screen, (0, 255, 0),
+                pygame.draw.rect(self.SCREEN, (0, 255, 0),
                                  buttonGroup["andersonButton"])
                 done = False
-                anderson = src.anderson.Anderson()
+                anderson = src.Anderson.Anderson()
                 anderson.mainloop()
                 self.points += anderson.andersonPoints
                 selected = True
             if lecturehallpressed == True:
-                pygame.draw.circle(self.screen, (0, 255, 0), (500, 100), 50)
+                pygame.draw.circle(self.SCREEN, (0, 255, 0), (500, 100), 50)
                 done = False
-                lecturehall = src.lecturehall.Lecturehall()
+                lecturehall = src.Lecturehall.Lecturehall()
                 lecturehall.mainloop()
                 self.points += lecturehall.lecturehallPoints
                 selected = True
             if scilibrarypressed == True:
-                pygame.draw.rect(self.screen, (0, 255, 0), buttonGroup["scilibraryButton"])
+                pygame.draw.rect(self.SCREEN, (0, 255, 0), buttonGroup["scilibraryButton"])
                 done = False
-                scilibrary = src.scilibrary.Scilibrary()
+                scilibrary = src.Scilibrary.Scilibrary()
                 scilibrary.mainloop()
                 self.points += scilibrary.scilibraryPoints
                 selected = True
             if unionpressed == True:
-                pygame.draw.rect(self.screen, (0, 255, 0), buttonGroup["unionButton"])
+                pygame.draw.rect(self.SCREEN, (0, 255, 0), buttonGroup["unionButton"])
                 done = False
-                union = src.union.Union()
+                union = src.Union.Union()
                 union.mainloop()
                 self.points += union.unionPoints
                 selected = True
             if librarypressed == True:
-                pygame.draw.rect(self.screen, (0, 255, 0), buttonGroup["libraryButton"])
-                library = src.library.Library()
+                pygame.draw.rect(self.SCREEN, (0, 255, 0), buttonGroup["libraryButton"])
+                library = src.Library.Library()
                 library.mainloop()
                 self.points += library.libraryPoints
                 selected = True
             if whitneypressed == True:
-                pygame.draw.rect(self.screen, (0, 255, 0), buttonGroup["whitneyButton"])
+                pygame.draw.rect(self.SCREEN, (0, 255, 0), buttonGroup["whitneyButton"])
                 done = False
-                whitney = src.whitney.Whitney()
+                whitney = src.Whitney.Whitney()
                 whitney.mainloop()
                 self.points += whitney.whitneyPoints
                 selected = True

@@ -4,7 +4,7 @@ class Whitney:
 
     def __init__(self, tag=""):
         pygame.init()
-        self.screen = pygame.display.set_mode()
+        self.SCREEN = pygame.display.set_mode()
         size = pygame.display.get_window_size()
         self.background_image1 = ["assets/whitney.png"]
         self.background1 = pygame.image.load(self.background_image1[0])
@@ -14,7 +14,7 @@ class Whitney:
         self.whitneyPoints = 0
         answerQuestion = True
         while answerQuestion == True:
-            self.screen.blit(self.background1, (0, 0))
+            self.SCREEN.blit(self.background1, (0, 0))
             pygame.display.update()
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:

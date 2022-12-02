@@ -6,15 +6,15 @@ class Instructions:
   def __init__(self):
   #setup pygame data
     pygame.init()
-    self.screen = pygame.display.set_mode()
+    self.SCREEN = pygame.display.set_mode()
     
   def mainloop(self):
     controllor = src.controller.Controller()
 
-    self.screen.fill((255, 0, 0))
+    self.SCREEN.fill((255, 0, 0))
     font = pygame.font.SysFont(None, 24)
     text = font.render('Instructions for Trivia Map Game\press b to return', True, (0,0,255))
-    self.screen.blit(text, (20, 20))
+    self.SCREEN.blit(text, (20, 20))
     pygame.display.update()
     answerQuestion = True 
     while answerQuestion == True: 
