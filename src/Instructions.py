@@ -1,5 +1,5 @@
 import pygame 
-import src.controller
+import src.Controller
 
 class Instructions: 
     
@@ -9,17 +9,17 @@ class Instructions:
     self.SCREEN = pygame.display.set_mode()
     
   def mainloop(self):
-    controllor = src.controller.Controller()
+    controllor = src.Controller.Controller()
 
     self.SCREEN.fill((255, 0, 0))
     font = pygame.font.SysFont(None, 24)
     text = font.render('Instructions for Trivia Map Game\press b to return', True, (0,0,255))
     self.SCREEN.blit(text, (20, 20))
-    text = font.render('1) Press "Start" and wait for map to appear', True, (0,0,255))
+    text = font.render('1) Press "Start" and a map of Binghamton University will appear.', True, (0,0,255))
     self.SCREEN.blit(text, (20, 120))
-    text = font.render('2) Click on any building and enter your answer to the multiple choice question using your keyboard', True, (0,0,255))
+    text = font.render('2) Click on any building. A multiple choice question will appear, and enter your answer using your keyboard.', True, (0,0,255))
     self.SCREEN.blit(text, (20, 220))
-    text = font.render('3) Click on each of the buildings and answer the question to gain points ', True, (0,0,255))
+    text = font.render('3) You will earn one point for a correct answer and lose one point for an incorrect answer. Click on as many buildings as you want! ', True, (0,0,255))
     self.SCREEN.blit(text, (20, 320))
 
     pygame.display.update()

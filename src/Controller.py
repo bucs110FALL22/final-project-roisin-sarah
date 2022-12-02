@@ -1,31 +1,27 @@
 import pygame
-import src.start
-import src.instructions
+import src.Start
+import src.Instructions
 import json
-
-SCREENWIDTH = 800
-SCREENHEIGHT = 500
-SCREEN = pygame.display.set_mode([SCREENWIDTH, SCREENHEIGHT])
-
 
 class Controller:
 
     def __init__(self):
         #setup pygame data
+        screenWidth = 800
+        screenHeight = 500
         pygame.init()
         '''import background image '''
-        self.SCREEN = pygame.display.set_mode()
-        size = pygame.display.get_window_size()
+        self.screen = pygame.display.set_mode([screenWidth, screenHeight])
         self.background_image = ["assets/Map.jpeg"]
         self.background = pygame.image.load(self.background_image[0])
-        self.background = pygame.transform.scale(self.background, size)
-        self.SCREEN.blit(self.background, (0, 0))
+        self.background = pygame.transform.scale(self.background, (screenWidth, screenHeight))
+        self.screen.blit(self.background, (0, 0))
 
     def mainloop(self):
         #select state loop
         '''display background image and caption'''
         pygame.display.set_caption('Binghamton University Map Trivia Game!')
-        self.SCREEN.blit(self.background, (0, 0))
+        self.screen.blit(self.background, (0, 0))
         self.beginningMenu()
       
     def beginningMenu(self):
@@ -34,7 +30,7 @@ class Controller:
         buttonGroup = {}
         '''load and disply intro logo picture'''
         self.image = pygame.image.load("assets/introLogo.png")
-        SCREEN.blit(pygame.transform.scale(self.image, (500, 500)), (80, -100))
+        self.screen.blit(pygame.transform.scale(self.image, (500, 500)), (80, -100))
         '''load json file '''
       
         with open('etc/button_data.json','r') as fptr:
@@ -42,10 +38,10 @@ class Controller:
         '''create the start, instructions, and quit buttons'''
         for button in data ['button']:
           buttonGroup[button['buttonName']] = pygame.Rect(button['x'],button['y'], button['w'],button['h'])
-          pygame.draw.rect(self.SCREEN, button['buttonColor'], buttonGroup[button['buttonName']])
+          pygame.draw.rect(self.screen, button['buttonColor'], buttonGroup[button['buttonName']])
           font = pygame.font.SysFont(None,button['fontSize'])
           button['buttonVariable'] = font.render(button['buttonLabel'], True, button['buttonTextColor'])
-          self.SCREEN.blit(button['buttonVariable'], (button['buttonTextX'], button['buttonTextY']))
+          self.screen.blit(button['buttonVariable'], (button['buttonTextX'], button['buttonTextY']))
 
         '''update the screen'''
         pygame.display.update()
@@ -74,23 +70,23 @@ class Controller:
                         done = True
 
             if startPressed == True:
-                pygame.draw.rect(self.SCREEN, (255, 0, 0), buttonGroup["startButton"])
+                pygame.draw.rect(self.screen, (255, 0, 0), buttonGroup["startButton"])
                 pygame.display.flip()
                 self.beginning = False
-                start = src.start.Start()
+                start = src.Start.Start(self.screen)
                 start.mainloop()
 
             if instructionsPressed == True:
-                pygame.draw.rect(self.SCREEN, (255, 0, 0), buttonGroup["instructionButton"])
+                pygame.draw.rect(self.screen, (255, 0, 0), buttonGroup["instructionButton"])
                 pygame.display.flip()
                 self.beginning = False
-                instructions = src.instructions.Instructions()
+                instructions = src.Instructions.Instructions()
                 instructions.mainloop()
 
             if quitPressed == True:
-                pygame.draw.rect(self.SCREEN, (255, 0, 0), buttonGroup["quitButton"])
+                pygame.draw.rect(self.screen, (255, 0, 0), buttonGroup["quitButton"])
                 pygame.display.flip()
-                self.SCREEN.fill((0, 0, 0))
+                self.screen.fill((0, 0, 0))
                 pygame.display.flip()
                 pygame.quit()
                 quit()
@@ -100,7 +96,7 @@ class Controller:
         points = 0
         font = pygame.font.SysFont(None, 30)
         pointsText = font.render('Points: ' + points, True, (255, 0, 0))
-        self.SCREEN.blit(pointsText, (100, 200))
+        self.screen.blit(pointsText, (100, 200))
         print(points)
 
 # def menuloop(self):

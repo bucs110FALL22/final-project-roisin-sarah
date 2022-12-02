@@ -1,4 +1,3 @@
-:warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 # CS110 Project Proposal
 # Binghamton University Map Trivia Game!
 ## CS 110 Final Project
@@ -24,11 +23,33 @@ Our project is a trivia game that displays a map of Binghamton University with s
 ## User Interface Design
 
 - **Initial Concept**
-  - << A wireframe or drawing of the user interface concept along with a short description of the interface. You should have one for each screen in your program. For example, if your program has a start screen, game screen, and game over screen, you should include a wireframe / screenshot / drawing of each one and a short description of the components. >>
-    
-    
+  - Here is an image of our inital concept for a user interface concept.
+  * ![initial concept](assets/initialConcept.jpg)
+  - Description of each of the components:
+    - The main screen will show three different buttons to launch the game. The user can choose start, instructions, or quit.
+    - If the quit button is pressed, the screen will show a black screen and quit.
+    - If the instructions button is pressed, the screen will display the instructions.
+    - If the start button is pressed, the screen will show a map of Binghamton. When each building is clicked, it will load a trivia question for each. 
+
 - **Final GUI**
-  - << You should also have a screenshot of each screen for your final GUI >>
+  - Opening Menu:
+    - ![intro menu](assets/introMenu.png)
+  - When the quit button is pressed:
+  - When the instructions button is pressed:
+  - When the start button is pressed:
+    - When Anderson Center is pressed:
+      - ![anderson](assets/anderson.png)
+    - When Lecture Hall is pressed:
+      - ![lecture hall](assets/lecturehall.png)
+    - When Union is pressed:
+      - ![union](assets/union.png)
+    - When Library is pressed:
+      - ![library](assets/library.png)
+    - When Science Library Center is pressed:
+      - ![library](assets/scilibrary.png)
+    - When Whitney is pressed:
+      - ![whitney](assets/whitney.png)
+
 
 ***        
 
@@ -41,8 +62,8 @@ Our project is a trivia game that displays a map of Binghamton University with s
      - Pygame is a set of modules for making games. Pygame is known for being simple and easy to use to make games.
 
   - Json:
-   - https://www.json.org/json-en.htmland 
-   - Json is a library that is used to store datat. In practice, it is used to combine and condense code to make programs more efficent.
+    - https://www.json.org/json-en.htmland
+    - Json is a library that is used to store datat. In practice, it is used to combine and condense code to make programs more efficent.
      
 
 * Class Interface Design
@@ -82,13 +103,12 @@ The Project is broken down into the following file structure:
 * main.py
 * src
     * Anderson.py
-    * controllor.py
-    * instructions.py
+    * Controllor.py
+    * Instructions.py
     * Lecturehall.py
     * Library.py
-    * quit.py
     * Scilibrary.py
-    * start.py
+    * Start.py
     * Union.py
     * Whitney.py
 * assets
@@ -121,21 +141,20 @@ The Project is broken down into the following file structure:
 
 | Step                 |Procedure                             |Expected Results                   |
 |----------------------|:--------------------:|----------------------------------:|
-|  1                   | Type "python3 main.py" into the shell or click the Run button|The program begins and displays the trivia games opening page on the window  |    click
-                       
-|  2                   | click "Quit" button                   | Window disappears and code stops running|
-|  3                   | Retype "python3 main.py" into the shell | The program begins and displays the trivia games opening page |
-|  4                   | Click on the "Instructions" button | A set of instructions on how to play the game appears on the window |
-|  5                   | Press "b" on the computer keyboard | Returns to opening screen |
-|  6                   | Press the "Start" button           | The window display changes to a map of Binghamton's campus with six shapes, each representing a building, spread throughout the map, as well as "Points = 0" printed in the bottom left of the window |
-|  7                   | Click on the rectangle labled "WH" | The name of the building just clicked appears along with a multiple choice question with four answers |
-| 8                    | User enters "d" on their keyboard | Window returns to the map of the buildings and a point is added to the users total points, which is displayed on the screen |
+|  1                   | Open terminal, navigate to folder, and type, “python3 main.py”|The program begins and displays the trivia games opening page on the window  |    
+|  2                   | Click "Quit" button  |Window appears black and quits  | 
+|  3                   | Open terminal, navigate to folder, and type, “python3 main.py”|The program begins and displays the trivia game opening page  | 
+|  4                  | Click on the "Instructions" button|A set of instructions on how to play the game appears on the window  | 
+|  5                  | Press "b" on the computer keyboard|Returns to opening screen | 
+|  6                  | Press the "Start" button  |The window display changes to a map of Binghamton's campus with six shapes, each representing a building, spread throughout the map, as well as "Points = 0" printed in the bottom left of the window | 
+|  7                  | Click on the rectangle labled "WH"|The name of the building just clicked appears along with a multiple choice question with four answers | 
+|  8                 | User enters "d" on their keyboard |Window returns to the map of the buildings and a point is added to the users total points, which is displayed on the screen | 
 | 9                    | User enters "a", "b", or "c" on their keyboard |Window returns to the map of the buildings and a point is subtracted from the users total points, which is displayed on the screen |
 | 10                   | User clicks on the rectangle labled "UU" |The name of the building just clicked appears along with a multiple choice question with four answers |
 | 11                   | User enters "c" on their keyboard | The window returns to the map of the building s and a point is added to the users total points, which is displayed on the screen |
 | 12                   | User enters "a", "b", or "d" on their keyboard | Window returns to the map of the buildings and a point is subtracted from the users total points, which is displayed on the screen |
 | 13                   | User clicks on the rectangle labled "LIB" | The name of the building just clicked appears along with a multiple choice question with four answers | 
-| 14                   | User enters "b" on their keyboard | The window returns to the map of the building s and a point is added to the users total points, which is displayed on the screen |
+| 14                   | User enters "b" on their keyboard | The window returns to the map of the buildings and a point is added to the users total points, which is displayed on the screen |
 | 12                   | User enters "a", "c", or "d" on their keyboard | Window returns to the map of the buildings and a point is subtracted from the users total points, which is displayed on the screen |
 | 13                   | User clicks on the circle labled "LH" |The name of the building just clicked appears along with a multiple choice question with four answers | 
 | 14                   |User enters "d" on their keyboard | The window returns to the map of the building s and a point is added to the users total points, which is displayed on the screen |
